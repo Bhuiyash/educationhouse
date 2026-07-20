@@ -1,4 +1,5 @@
 import { Component, booleanAttribute, input } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 export type ButtonVariant = 'primary' | 'accent' | 'outline' | 'outline-primary';
@@ -6,7 +7,7 @@ export type ButtonSize = 'md' | 'sm';
 
 @Component({
   selector: 'app-button',
-  imports: [RouterLink],
+  imports: [RouterLink, NgTemplateOutlet],
   templateUrl: './button.html',
 })
 export class ButtonComponent {
