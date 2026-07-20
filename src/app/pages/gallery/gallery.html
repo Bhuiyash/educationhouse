@@ -1,0 +1,26 @@
+<section class="page-hero">
+  <div class="container page-hero__content" appRevealOnScroll>
+    <span class="eyebrow">Gallery</span>
+    <h1>Moments From Our Education House Community</h1>
+    <p>A glimpse into our workshops, events, counselling sessions and celebrations with our students.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-pills" appRevealOnScroll>
+      @for (category of categories(); track category) {
+        <button
+          type="button"
+          class="filter-pills__btn"
+          [class.is-active]="activeCategory() === category"
+          (click)="setCategory(category)"
+        >
+          {{ category }}
+        </button>
+      }
+    </div>
+
+    <app-gallery-grid [images]="filteredImages()" />
+  </div>
+</section>

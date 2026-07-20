@@ -1,0 +1,30 @@
+<section class="page-hero">
+  <div class="container page-hero__content" appRevealOnScroll>
+    <span class="eyebrow">Study Abroad</span>
+    <h1>Discover Your Ideal Study Destination</h1>
+    <p>
+      We help you choose the right country, university and program based on your academic profile, budget and
+      long-term career goals — backed by real admission and visa expertise.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid countries-grid">
+      @for (country of countries(); track country.slug) {
+        <div appRevealOnScroll>
+          <app-country-card [country]="country" />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta__inner" appRevealOnScroll>
+    <h2>Confused About Which Country to Choose?</h2>
+    <p>Book a free consultation and let our counsellors help you shortlist the best-fit destination for you.</p>
+    <app-button routerLink="/contact" variant="accent" size="md">Get Free Counselling</app-button>
+  </div>
+</section>

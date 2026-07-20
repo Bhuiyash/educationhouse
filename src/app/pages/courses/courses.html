@@ -1,0 +1,43 @@
+<section class="page-hero">
+  <div class="container page-hero__content" appRevealOnScroll>
+    <span class="eyebrow">Our Programs</span>
+    <h1>Courses Built to Get You Results</h1>
+    <p>
+      From test preparation to visa filing, our programs are designed by experts who know exactly what it
+      takes to succeed — in the classroom and beyond.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-pills" appRevealOnScroll>
+      @for (category of categories(); track category) {
+        <button
+          type="button"
+          class="filter-pills__btn"
+          [class.is-active]="activeCategory() === category"
+          (click)="setCategory(category)"
+        >
+          {{ category }}
+        </button>
+      }
+    </div>
+
+    <div class="grid courses-grid">
+      @for (course of filteredCourses(); track course.slug) {
+        <div appRevealOnScroll>
+          <app-course-card [course]="course" />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta__inner" appRevealOnScroll>
+    <h2>Not Sure Which Course Is Right for You?</h2>
+    <p>Talk to our counsellors for a free assessment and personalised course recommendation.</p>
+    <app-button routerLink="/contact" variant="accent" size="md">Get Free Guidance</app-button>
+  </div>
+</section>

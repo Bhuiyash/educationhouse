@@ -1,0 +1,25 @@
+<div class="gallery-grid">
+  @for (image of images(); track trackById($index, image); let i = $index) {
+    <button type="button" class="gallery-item" (click)="open(i)">
+      <img [src]="image.src" [alt]="image.alt" loading="lazy" width="640" height="480" />
+      <span class="gallery-item__overlay">
+        <span class="gallery-item__category">{{ image.category }}</span>
+        <span class="gallery-item__zoom" aria-hidden="true">🔍</span>
+      </span>
+    </button>
+  }
+</div>
+
+@if (activeImage) {
+  <div class="lightbox" role="dialog" aria-modal="true" [attr.aria-label]="activeImage.alt" (click)="close()">
+    <button type="button" class="lightbox__close" (click)="close()" aria-label="Close gallery">✕</button>
+    <button type="button" class="lightbox__nav lightbox__nav--prev" (click)="prev($event)" aria-label="Previous image">‹</button>
+
+    <figure class="lightbox__content" (click)="$event.stopPropagation()">
+      <img [src]="activeImage.src" [alt]="activeImage.alt" />
+      <figcaption>{{ activeImage.alt }}</figcaption>
+    </figure>
+
+    <button type="button" class="lightbox__nav lightbox__nav--next" (click)="next($event)" aria-label="Next image">›</button>
+  </div>
+}

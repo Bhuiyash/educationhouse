@@ -1,0 +1,34 @@
+<section class="page-hero">
+  <div class="container page-hero__content" appRevealOnScroll>
+    <span class="eyebrow">Help Center</span>
+    <h1>Frequently Asked Questions</h1>
+    <p>Answers to the most common questions about admissions, courses, visas and fees.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container faq-page">
+    <div class="filter-pills" appRevealOnScroll>
+      @for (category of categories(); track category) {
+        <button
+          type="button"
+          class="filter-pills__btn"
+          [class.is-active]="activeCategory() === category"
+          (click)="setCategory(category)"
+        >
+          {{ category }}
+        </button>
+      }
+    </div>
+
+    <app-faq-accordion [faqs]="filteredFaqs()" />
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta__inner" appRevealOnScroll>
+    <h2>Still Have Questions?</h2>
+    <p>Our counsellors are just a message away and happy to help with anything you need.</p>
+    <app-button routerLink="/contact" variant="accent" size="md">Contact Us</app-button>
+  </div>
+</section>

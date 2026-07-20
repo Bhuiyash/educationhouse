@@ -1,0 +1,16 @@
+<article class="testimonial-card card">
+  <div class="testimonial-card__rating" aria-hidden="true">
+    @for (star of stars; track star) {
+      <span [class.is-filled]="star < testimonial().rating">★</span>
+    }
+  </div>
+  <p class="testimonial-card__quote">&ldquo;{{ testimonial().quote }}&rdquo;</p>
+  <div class="testimonial-card__outcome">{{ testimonial().outcome }}</div>
+  <div class="testimonial-card__person">
+    <img [src]="testimonial().photo" [alt]="testimonial().name" loading="lazy" width="56" height="56" />
+    <div>
+      <strong>{{ testimonial().name }}</strong>
+      <span>{{ testimonial().course }}</span>
+    </div>
+  </div>
+</article>

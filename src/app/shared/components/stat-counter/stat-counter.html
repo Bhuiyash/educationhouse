@@ -1,0 +1,5 @@
+<div class="stat-counter">
+  <span class="stat-counter__icon" aria-hidden="true">{{ stat().icon }}</span>
+  <span class="stat-counter__value">{{ displayValue() | number }}{{ stat().suffix }}</span>
+  <span class="stat-counter__label">{{ stat().label }}</span>
+</div>

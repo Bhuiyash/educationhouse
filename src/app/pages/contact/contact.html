@@ -1,0 +1,45 @@
+<section class="page-hero">
+  <div class="container page-hero__content" appRevealOnScroll>
+    <span class="eyebrow">Get In Touch</span>
+    <h1>We'd Love to Hear From You</h1>
+    <p>
+      Whether you have a question about our courses, need visa guidance, or just want to say hello — our team
+      is ready to help.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid contact-details-grid">
+      @for (detail of contactDetails; track detail.title) {
+        <div class="contact-detail card" appRevealOnScroll>
+          <span class="contact-detail__icon" aria-hidden="true">{{ detail.icon }}</span>
+          <h3>{{ detail.title }}</h3>
+          @for (line of detail.lines; track line) {
+            <p>{{ line }}</p>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container contact-layout">
+    <div class="contact-layout__form card" appRevealOnScroll>
+      <h2>Send Us a Message</h2>
+      <p>Fill out the form below and we'll respond within 24 hours.</p>
+      <app-contact-form />
+    </div>
+
+    <div class="contact-layout__map" appRevealOnScroll>
+      <iframe
+        title="Education House location on Google Maps"
+        src="https://www.google.com/maps?q=MG+Road,+Bengaluru,+Karnataka&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>

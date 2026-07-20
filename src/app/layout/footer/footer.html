@@ -1,0 +1,74 @@
+<footer class="footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <a routerLink="/" class="footer__logo">
+        <span class="footer__logo-mark">EH</span>
+        <span>Education<strong>House</strong></span>
+      </a>
+      <p>
+        Empowering students since 2011 with world-class test preparation, career counselling, and study abroad
+        guidance to help you achieve your global ambitions.
+      </p>
+      <ul class="footer__social">
+        @for (social of socialLinks; track social.label) {
+          <li>
+            <a [href]="social.href" target="_blank" rel="noopener" [attr.aria-label]="social.label">{{ social.icon }}</a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h3>Quick Links</h3>
+      <ul>
+        @for (link of quickLinks; track link.path) {
+          <li><a [routerLink]="link.path">{{ link.label }}</a></li>
+        }
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h3>Our Courses</h3>
+      <ul>
+        @for (course of courseLinks; track course) {
+          <li><a routerLink="/courses">{{ course }}</a></li>
+        }
+      </ul>
+    </div>
+
+    <div class="footer__col footer__col--wide">
+      <h3>Stay Updated</h3>
+      <p>Subscribe to get the latest scholarship alerts, intake deadlines and event updates.</p>
+
+      @if (isSubscribed()) {
+        <p class="footer__subscribed">✓ You're subscribed! Check your inbox for a confirmation email.</p>
+      } @else {
+        <form class="footer__newsletter" (ngSubmit)="subscribe()">
+          <input
+            type="email"
+            required
+            placeholder="Enter your email"
+            [ngModel]="newsletterEmail()"
+            (ngModelChange)="newsletterEmail.set($event)"
+            name="newsletterEmail"
+            aria-label="Email address for newsletter"
+          />
+          <button type="submit" class="btn btn-accent btn-sm">Subscribe</button>
+        </form>
+      }
+
+      <address>
+        <p>123 MG Road, Bengaluru, Karnataka 560001, India</p>
+        <p><a href="tel:+911234567890">+91 123 456 7890</a></p>
+        <p><a href="mailto:info@educationhouse.in">info&#64;educationhouse.in</a></p>
+      </address>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p>&copy; {{ currentYear }} Education House. All rights reserved.</p>
+      <p>Designed for students who dream big.</p>
+    </div>
+  </div>
+</footer>

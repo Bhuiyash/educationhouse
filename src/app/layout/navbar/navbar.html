@@ -1,0 +1,38 @@
+<header class="navbar" [class.is-scrolled]="isScrolled()">
+  <div class="container navbar__inner">
+    <a routerLink="/" class="navbar__logo" (click)="closeMenu()">
+      <span class="navbar__logo-mark">EH</span>
+      <span class="navbar__logo-text">Education<strong>House</strong></span>
+    </a>
+
+    <nav class="navbar__nav" [class.is-open]="isMenuOpen()" aria-label="Primary navigation">
+      <ul>
+        @for (link of navLinks; track link.path) {
+          <li>
+            <a [routerLink]="link.path" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: link.path === '/' }" (click)="closeMenu()">
+              {{ link.label }}
+            </a>
+          </li>
+        }
+      </ul>
+
+      <div class="navbar__nav-cta">
+        <app-button routerLink="/contact" size="sm" (click)="closeMenu()">Get Free Counselling</app-button>
+      </div>
+    </nav>
+
+    <button
+      type="button"
+      class="navbar__toggle"
+      [class.is-open]="isMenuOpen()"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-controls="primary-navigation"
+      aria-label="Toggle navigation menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>

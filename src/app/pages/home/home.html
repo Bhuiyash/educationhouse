@@ -1,0 +1,112 @@
+<!-- Hero -->
+<section class="hero">
+  <div class="hero__overlay"></div>
+  <div class="container hero__content">
+    <span class="eyebrow fade-in">#1 Rated Education Consultancy</span>
+    <h1 class="slide-up">Your Global Education Journey Starts at <span>Education House</span></h1>
+    <p class="hero__subtitle slide-up">
+      Expert IELTS &amp; PTE coaching, personalised counselling and end-to-end study abroad support for Canada,
+      Australia, the UK, USA, Germany and Ireland.
+    </p>
+    <div class="hero__actions slide-up">
+      <app-button routerLink="/contact" size="md">Book Free Counselling</app-button>
+      <app-button routerLink="/courses" variant="outline" size="md">Explore Courses</app-button>
+    </div>
+  </div>
+</section>
+
+<!-- Achievements / Statistics -->
+<section class="section stats-section" appRevealOnScroll>
+  <div class="container stats-grid">
+    @for (stat of stats(); track stat.label) {
+      <app-stat-counter [stat]="stat" />
+    }
+  </div>
+</section>
+
+<!-- Why Choose Education House -->
+<section class="section" id="why-us">
+  <div class="container">
+    <app-section-title
+      eyebrow="Why Choose Us"
+      title="Why Choose Education House"
+      subtitle="We combine expert mentorship with honest guidance to help you make confident decisions about your future."
+    />
+    <div class="grid features-grid">
+      @for (feature of features(); track feature.title) {
+        <div appRevealOnScroll>
+          <app-feature-card [feature]="feature" />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Popular Courses -->
+<section class="section section--alt" id="courses">
+  <div class="container">
+    <app-section-title
+      eyebrow="Our Programs"
+      title="Popular Courses"
+      subtitle="From test preparation to visa filing, explore the programs that get our students results."
+    />
+    <div class="grid courses-grid">
+      @for (course of popularCourses; track course.slug) {
+        <div appRevealOnScroll>
+          <app-course-card [course]="course" />
+        </div>
+      }
+    </div>
+    <div class="section-footer-cta">
+      <app-button routerLink="/courses" variant="outline-primary">View All Courses</app-button>
+    </div>
+  </div>
+</section>
+
+<!-- Student Success / Testimonials -->
+<section class="section" id="success">
+  <div class="container">
+    <app-section-title
+      eyebrow="Student Success"
+      title="Real Stories, Real Success"
+      subtitle="Thousands of students have trusted us to guide their journey abroad. Here’s what a few of them have to say."
+    />
+    <div class="grid testimonials-grid">
+      @for (testimonial of featuredTestimonials; track testimonial.id) {
+        <div appRevealOnScroll>
+          <app-testimonial-card [testimonial]="testimonial" />
+        </div>
+      }
+    </div>
+    <div class="section-footer-cta">
+      <app-button routerLink="/testimonials" variant="outline-primary">Read More Stories</app-button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt" id="faq">
+  <div class="container faq-layout">
+    <div class="faq-layout__intro" appRevealOnScroll>
+      <span class="eyebrow">Got Questions?</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>
+        Can't find the answer you're looking for? Reach out to our counselling team and we'll get back to you
+        within 24 hours.
+      </p>
+      <app-button routerLink="/faq" variant="outline-primary">View All FAQs</app-button>
+    </div>
+    <div class="faq-layout__list">
+      <app-faq-accordion [faqs]="topFaqs" />
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA -->
+<section class="cta">
+  <div class="container cta__inner" appRevealOnScroll>
+    <h2>Ready to Begin Your Journey Abroad?</h2>
+    <p>Book a free 1-on-1 counselling session with our experts and take the first step towards your dream university.</p>
+    <app-button routerLink="/contact" variant="accent" size="md">Get Free Counselling</app-button>
+  </div>
+</section>

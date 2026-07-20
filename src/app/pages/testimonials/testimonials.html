@@ -1,0 +1,30 @@
+<section class="page-hero">
+  <div class="container page-hero__content" appRevealOnScroll>
+    <span class="eyebrow">Student Success Stories</span>
+    <h1>What Our Students Say About Us</h1>
+    <p>
+      Don't just take our word for it — hear directly from the students who trusted Education House with their
+      journey abroad.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid testimonials-grid">
+      @for (testimonial of testimonials(); track testimonial.id) {
+        <div appRevealOnScroll>
+          <app-testimonial-card [testimonial]="testimonial" />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta__inner" appRevealOnScroll>
+    <h2>Ready to Write Your Own Success Story?</h2>
+    <p>Join thousands of students who have achieved their global education dreams with Education House.</p>
+    <app-button routerLink="/contact" variant="accent" size="md">Start Your Journey</app-button>
+  </div>
+</section>

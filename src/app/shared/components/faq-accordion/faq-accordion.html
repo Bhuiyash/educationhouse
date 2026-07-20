@@ -1,0 +1,21 @@
+<div class="faq-accordion">
+  @for (faq of faqs(); track trackById($index, faq)) {
+    <div class="faq-item" [class.is-open]="isOpen(faq.id)">
+      <h3>
+        <button
+          type="button"
+          class="faq-item__trigger"
+          [attr.aria-expanded]="isOpen(faq.id)"
+          [attr.aria-controls]="'faq-panel-' + faq.id"
+          (click)="toggle(faq.id)"
+        >
+          <span>{{ faq.question }}</span>
+          <span class="faq-item__icon" aria-hidden="true">+</span>
+        </button>
+      </h3>
+      <div class="faq-item__panel" [id]="'faq-panel-' + faq.id" role="region">
+        <p>{{ faq.answer }}</p>
+      </div>
+    </div>
+  }
+</div>

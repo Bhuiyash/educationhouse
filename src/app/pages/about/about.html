@@ -1,0 +1,112 @@
+<!-- Intro -->
+<section class="page-hero">
+  <div class="container page-hero__content" appRevealOnScroll>
+    <span class="eyebrow">About Education House</span>
+    <h1>Guiding Students Toward Global Success Since 2011</h1>
+    <p>
+      Education House is a full-service education consultancy helping students prepare for international
+      exams, choose the right university, and confidently navigate the visa process — all under one roof.
+    </p>
+  </div>
+</section>
+
+<!-- Mission / Vision -->
+<section class="section">
+  <div class="container mv-grid">
+    <div class="mv-card" appRevealOnScroll>
+      <span class="mv-card__icon" aria-hidden="true">🎯</span>
+      <h2>Our Mission</h2>
+      <p>
+        To empower every student with the knowledge, skills and confidence needed to pursue quality education
+        anywhere in the world — through honest guidance, expert coaching and unwavering support.
+      </p>
+    </div>
+    <div class="mv-card" appRevealOnScroll>
+      <span class="mv-card__icon" aria-hidden="true">🔭</span>
+      <h2>Our Vision</h2>
+      <p>
+        To become India's most trusted name in education consultancy, recognised for transforming ambition
+        into achievement for over a million students by 2035.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section section--alt">
+  <div class="container">
+    <app-section-title eyebrow="What Drives Us" title="Our Core Values" />
+    <div class="grid values-grid">
+      @for (value of values; track value.title) {
+        <div class="value-card card" appRevealOnScroll>
+          <span class="value-card__icon" aria-hidden="true">{{ value.icon }}</span>
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Director's message -->
+<section class="section">
+  <div class="container director-grid">
+    <div class="director-grid__image" appRevealOnScroll>
+      <img src="https://picsum.photos/seed/eh-director/560/640" alt="Portrait of the Director of Education House" loading="lazy" width="560" height="640" />
+    </div>
+    <div class="director-grid__content" appRevealOnScroll>
+      <span class="eyebrow">Director's Message</span>
+      <h2>"Every student who walks through our doors deserves a plan built around their dreams."</h2>
+      <p>
+        When we started Education House in 2011, our goal was simple: give students honest advice instead of
+        sales pitches. Fifteen years later, that principle still guides everything we do — from how we train
+        our counsellors to how we design our courses.
+      </p>
+      <p>
+        I'm proud that thousands of our students are now studying, working and building lives across six
+        countries. But what I'm proudest of is that they got there on a plan that was right for them, not
+        just what was easiest for us to sell.
+      </p>
+      <p class="director-grid__signature">Anjali Kapoor<br /><span>Founder &amp; Director, Education House</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- Achievements -->
+<section class="section section--alt">
+  <div class="container">
+    <app-section-title eyebrow="Our Impact" title="Achievements That Speak for Themselves" />
+    <div class="grid stats-grid">
+      @for (stat of stats(); track stat.label) {
+        <app-stat-counter [stat]="stat" />
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="section">
+  <div class="container">
+    <app-section-title eyebrow="Our Journey" title="Milestones Over the Years" />
+    <ol class="timeline">
+      @for (item of timeline; track item.year) {
+        <li class="timeline__item" appRevealOnScroll>
+          <span class="timeline__year">{{ item.year }}</span>
+          <div class="timeline__body">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container cta__inner" appRevealOnScroll>
+    <h2>Want to Know How We Can Help You?</h2>
+    <p>Talk to one of our counsellors today and get a personalised roadmap for your study abroad journey.</p>
+    <app-button routerLink="/contact" variant="accent" size="md">Book a Free Consultation</app-button>
+  </div>
+</section>
