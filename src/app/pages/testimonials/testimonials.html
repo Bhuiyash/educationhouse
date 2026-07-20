@@ -1,30 +1,37 @@
 <section class="page-hero">
   <div class="container page-hero__content" appRevealOnScroll>
-    <span class="eyebrow">Parent Voices</span>
-    <h1>What Parents Say About Us</h1>
+    <span class="eyebrow">Google Reviews</span>
+    <h1>Real Stories From Real Families</h1>
     <p>
-      Don't just take our word for it — hear directly from the parents who trust Education House with their
-      child's education.
+      Don't just take our word for it — hear directly from the parents and students who trust Education House
+      with their education.
     </p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="grid testimonials-grid">
-      @for (testimonial of testimonials(); track testimonial.id) {
-        <div appRevealOnScroll>
-          <app-testimonial-card [testimonial]="testimonial" />
-        </div>
-      }
+    <app-section-title
+      eyebrow="Testimonials"
+      title="What Parents &amp; Students Say"
+      subtitle="We're proud to have earned the trust of students and parents through years of dedicated teaching and personalized guidance."
+    />
+    <div appRevealOnScroll>
+      <app-testimonial-carousel [testimonials]="testimonials()" />
     </div>
   </div>
 </section>
 
-<section class="cta">
-  <div class="container cta__inner" appRevealOnScroll>
-    <h2>Ready to See the Difference for Your Child?</h2>
-    <p>Join hundreds of families who have trusted Education House with their child's growth and learning.</p>
-    <app-button routerLink="/contact" variant="accent" size="md">Enroll Your Child</app-button>
+<!-- <section class="section section--alt">
+  <div class="container google-cta" appRevealOnScroll>
+    <h2>Loved by Our Students &amp; Parents</h2>
+    <p>
+      Our greatest achievement is the success and satisfaction of our students and their families. Read more
+      genuine reviews or share your own experience with Education House on Google.
+    </p>
+    <div class="google-cta__actions">
+      <app-button [href]="googleReviewsUrl" variant="primary">⭐ Read All Google Reviews</app-button>
+      <app-button [href]="writeReviewUrl" variant="outline-primary">✍️ Write a Review</app-button>
+    </div>
   </div>
-</section>
+</section> -->

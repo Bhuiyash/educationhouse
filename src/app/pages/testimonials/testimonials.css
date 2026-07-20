@@ -1,15 +1,13 @@
-.testimonials-grid {
-  grid-template-columns: repeat(3, 1fr);
+.google-cta {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
 }
 
-@media (max-width: 991px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
+.google-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
 }

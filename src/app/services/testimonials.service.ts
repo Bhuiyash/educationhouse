@@ -1,69 +1,62 @@
 import { Injectable, signal } from '@angular/core';
 import { Testimonial } from '../models';
 
+/**
+ * Real Google Business reviews for Education House.
+ * Text has been lightly cleaned up for readability; meaning is unchanged.
+ */
 @Injectable({ providedIn: 'root' })
 export class TestimonialsService {
   private readonly _testimonials = signal<Testimonial[]>([
     {
       id: 1,
-      name: 'Meera Agarwal',
-      photo: 'https://picsum.photos/seed/eh-parent-1/160/160',
-      relation: 'Parent of a Class 5 Student',
+      name: 'Abhi Sharma',
       rating: 5,
-      quote:
-        'My daughter’s confidence in English has improved tremendously. She now reads and speaks without hesitation, and it shows in her school results too.',
-      highlight: 'Noticeably more confident in class',
+      relativeTime: '1 year ago',
+      text: 'I’ve had a great experience with Education House. The teachers are patient, supportive, and ensure every student understands concepts clearly. The study material is well-structured, and regular tests help students track their progress and improve consistently.',
     },
     {
       id: 2,
-      name: 'Sanjay Tiwari',
-      photo: 'https://picsum.photos/seed/eh-parent-2/160/160',
-      relation: 'Parent of a Class 3 Student',
+      name: 'Utkarsh Dwivedi',
       rating: 5,
-      quote:
-        'The teachers genuinely care about every child. They know my son by name, understand how he learns best, and keep me updated after every session.',
-      highlight: 'Personal attention that actually shows',
+      relativeTime: '1 year ago',
+      text: 'I had a wonderful experience at Education House. The institute offers well-structured learning with a focused approach. The teachers are highly supportive, creating an environment where students feel motivated and confident.',
     },
     {
       id: 3,
-      name: 'Priya Singh',
-      photo: 'https://picsum.photos/seed/eh-parent-3/160/160',
-      relation: 'Parent of a Class 7 Student',
+      name: 'Prakhar Katiyar',
       rating: 5,
-      quote:
-        'The small batches ensure every student receives individual attention. My daughter never felt lost in a crowd like she did at her previous tuition.',
-      highlight: 'Small batches, real individual attention',
+      relativeTime: '5 months ago',
+      text: 'Excellent teachers, a positive learning environment, and proper care for every student. The syllabus is completed on time, and regular weekly tests help students perform better.',
     },
     {
       id: 4,
-      name: 'Ravi Shukla',
-      photo: 'https://picsum.photos/seed/eh-parent-4/160/160',
-      relation: 'Parent of a Class 2 Student',
+      name: 'Harshit Singh',
       rating: 5,
-      quote:
-        'We have seen significant improvement in both academics and confidence. Education House feels less like a tuition centre and more like a second classroom that cares.',
-      highlight: 'Stronger grades and a happier child',
+      relativeTime: '1 year ago',
+      text: 'Education House provides quality education through experienced teachers, engaging teaching methods, and a practical learning approach. The supportive environment helps students grow academically and personally.',
     },
     {
       id: 5,
-      name: 'Anjali Verma',
-      photo: 'https://picsum.photos/seed/eh-parent-5/160/160',
-      relation: 'Parent of a Class 8 Student',
+      name: 'Bhaskar Singh',
       rating: 5,
-      quote:
-        'The regular progress updates help us stay involved in our son’s learning. He looks forward to his classes every single day, which says a lot.',
-      highlight: 'Learning our child actually enjoys',
+      relativeTime: '5 months ago',
+      text: 'I still remember attending tuition here in Class 8. I struggled with Mathematics and Physics, but the guidance I received at Education House helped me achieve the goals I had set for myself.',
     },
     {
       id: 6,
-      name: 'Deepak Mishra',
-      photo: 'https://picsum.photos/seed/eh-parent-6/160/160',
-      relation: 'Parent of a Class 4 Student',
+      name: 'Yatharth Dixit',
       rating: 5,
-      quote:
-        'From homework support to spoken English practice, everything is handled with so much patience. It has made a real difference to my daughter’s discipline and habits.',
-      highlight: 'Better discipline and study habits',
+      relativeTime: '1 year ago',
+      text: 'My experience at Education House has been excellent. The teachers explain concepts using simple tricks and techniques that are extremely helpful during exams, making learning both effective and enjoyable.',
     },
+    {
+      id: 7,
+      name: 'Faiz Alam',
+      rating: 5,
+      relativeTime: '1 year ago',
+      text: 'Excellent teaching and outstanding support. The teachers are hardworking and give personal attention to every student, ensuring no one is left behind.',
+    }
   ]);
 
   readonly testimonials = this._testimonials.asReadonly();

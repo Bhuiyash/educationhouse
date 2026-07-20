@@ -1,0 +1,38 @@
+<div class="carousel" role="region" aria-roledescription="carousel" aria-label="Parent and student testimonials">
+  <button
+    type="button"
+    class="carousel__nav carousel__nav--prev"
+    (click)="scrollPrev()"
+    [disabled]="activeIndex() === 0"
+    aria-label="Previous testimonial"
+  >‹</button>
+
+  <ul class="carousel__track" #track>
+    @for (testimonial of testimonials(); track testimonial.id) {
+      <li class="carousel__slide">
+        <app-testimonial-card [testimonial]="testimonial" />
+      </li>
+    }
+  </ul>
+
+  <button
+    type="button"
+    class="carousel__nav carousel__nav--next"
+    (click)="scrollNext()"
+    [disabled]="activeIndex() === testimonials().length - 1"
+    aria-label="Next testimonial"
+  >›</button>
+</div>
+
+<div class="carousel__dots">
+  @for (testimonial of testimonials(); track testimonial.id; let i = $index) {
+    <button
+      type="button"
+      class="carousel__dot"
+      [class.is-active]="activeIndex() === i"
+      (click)="scrollToIndex(i)"
+      [attr.aria-current]="activeIndex() === i"
+      [attr.aria-label]="'Go to review ' + (i + 1) + ' of ' + testimonials().length"
+    ></button>
+  }
+</div>
