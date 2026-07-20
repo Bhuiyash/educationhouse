@@ -2,8 +2,8 @@ export interface Testimonial {
   id: number;
   name: string;
   photo: string;
-  course: string;
+  relation: string;
   rating: number;
   quote: string;
-  outcome: string;
+  highlight: string;
 }

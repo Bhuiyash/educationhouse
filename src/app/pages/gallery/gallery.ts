@@ -25,7 +25,7 @@ export class GalleryComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.seo.update('Gallery', 'Take a look at student workshops, events and campus life at Education House.');
+    this.seo.update('Gallery', 'Take a look at classroom activities, learning sessions and celebrations at Education House.');
   }
 
   setCategory(category: string): void {

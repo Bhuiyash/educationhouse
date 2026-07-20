@@ -5,6 +5,7 @@ import { ButtonComponent } from '../../shared/components/button/button';
 interface NavLink {
   label: string;
   path: string;
+  fragment?: string;
 }
 
 @Component({
@@ -20,11 +21,11 @@ export class NavbarComponent {
   readonly navLinks: NavLink[] = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
-    { label: 'Courses', path: '/courses' },
-    { label: 'Study Abroad', path: '/study-abroad' },
+    { label: 'Why Choose Us', path: '/', fragment: 'why-us' },
     { label: 'Gallery', path: '/gallery' },
     { label: 'Testimonials', path: '/testimonials' },
     { label: 'FAQ', path: '/faq' },
+    { label: 'Contact', path: '/contact' },
   ];
 
   @HostListener('window:scroll')

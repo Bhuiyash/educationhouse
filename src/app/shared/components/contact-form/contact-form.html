@@ -2,7 +2,7 @@
   <div class="form-success" role="status">
     <span class="form-success__icon" aria-hidden="true">✓</span>
     <h3>Message Sent Successfully!</h3>
-    <p>Thank you for reaching out. One of our counsellors will get back to you within 24 hours.</p>
+    <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
     <button type="button" class="btn btn-outline-primary" (click)="sendAnother()">Send Another Message</button>
   </div>
 } @else {
@@ -38,11 +38,11 @@
         <label for="subject">Subject</label>
         <select id="subject" formControlName="subject" [class.is-invalid]="f.subject.invalid && f.subject.touched">
           <option value="" disabled>Select a topic</option>
-          <option value="IELTS/PTE Coaching">IELTS/PTE Coaching</option>
-          <option value="Study Abroad Guidance">Study Abroad Guidance</option>
-          <option value="Visa Assistance">Visa Assistance</option>
-          <option value="Other Courses">Other Courses</option>
-          <option value="General Inquiry">General Inquiry</option>
+          <option value="Admissions Enquiry">Admissions Enquiry</option>
+          <option value="English Language Classes">English Language Classes</option>
+          <option value="School Tuition">School Tuition</option>
+          <option value="Fees & Batch Timings">Fees &amp; Batch Timings</option>
+          <option value="General Enquiry">General Enquiry</option>
         </select>
         @if (f.subject.invalid && f.subject.touched) {
           <span class="form-field__error">Please select a subject.</span>

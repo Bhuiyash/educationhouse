@@ -28,7 +28,7 @@ export class FaqComponent implements OnInit {
   ngOnInit(): void {
     this.seo.update(
       'FAQ',
-      'Find answers to frequently asked questions about admissions, courses, visas and fees at Education House.',
+      'Find answers to frequently asked questions about classes, batches and enrollment at Education House.',
     );
   }
 

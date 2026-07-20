@@ -20,7 +20,7 @@ export class TestimonialsComponent implements OnInit {
   ngOnInit(): void {
     this.seo.update(
       'Testimonials',
-      'Read real success stories from Education House students who achieved their study abroad and career goals.',
+      'Read what parents say about their children’s growth and learning experience at Education House.',
     );
   }
 }

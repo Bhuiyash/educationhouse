@@ -1,0 +1,11 @@
+<article class="offer-card card">
+  <span class="offer-card__icon" aria-hidden="true">{{ offer().icon }}</span>
+  <h3>{{ offer().title }}</h3>
+  <p class="offer-card__tagline">{{ offer().tagline }}</p>
+  <ul class="offer-card__list">
+    @for (item of offer().items; track item) {
+      <li>{{ item }}</li>
+    }
+  </ul>
+  <app-button routerLink="/contact" variant="outline-primary" block>Enroll Your Child</app-button>
+</article>

@@ -5,12 +5,12 @@
     }
   </div>
   <p class="testimonial-card__quote">&ldquo;{{ testimonial().quote }}&rdquo;</p>
-  <div class="testimonial-card__outcome">{{ testimonial().outcome }}</div>
+  <div class="testimonial-card__outcome">{{ testimonial().highlight }}</div>
   <div class="testimonial-card__person">
     <img [src]="testimonial().photo" [alt]="testimonial().name" loading="lazy" width="56" height="56" />
     <div>
       <strong>{{ testimonial().name }}</strong>
-      <span>{{ testimonial().course }}</span>
+      <span>{{ testimonial().relation }}</span>
     </div>
   </div>
 </article>

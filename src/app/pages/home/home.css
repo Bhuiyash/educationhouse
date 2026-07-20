@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   background: linear-gradient(120deg, var(--color-secondary) 0%, #0b3a7a 60%, var(--color-primary) 130%),
-    url('https://picsum.photos/seed/eh-hero/1600/900') center/cover no-repeat;
+    url('https://picsum.photos/seed/eh-hero-classroom/1600/900') center/cover no-repeat;
   background-blend-mode: multiply;
   color: #fff;
 }
@@ -37,6 +37,14 @@
   color: var(--color-accent);
 }
 
+.hero__subheading {
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  margin-bottom: var(--space-4);
+}
+
 .hero__subtitle {
   color: rgba(255, 255, 255, 0.85);
   font-size: 1.1rem;
@@ -61,17 +69,21 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: var(--space-4);
 }
 
-/* Feature / course / testimonial grids */
+/* Feature / offer / development / testimonial grids */
 .features-grid {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
-.courses-grid {
-  grid-template-columns: repeat(3, 1fr);
+.offers-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.development-grid {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .testimonials-grid {
@@ -82,6 +94,36 @@
   display: flex;
   justify-content: center;
   margin-top: var(--space-7);
+}
+
+/* Who Can Join */
+.who-can-join {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.who-can-join__pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin: var(--space-5) 0;
+}
+
+.who-can-join__pill {
+  background: var(--color-card);
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+}
+
+.who-can-join__note {
+  margin-bottom: 0;
+  font-style: italic;
 }
 
 /* FAQ layout */
@@ -98,13 +140,17 @@
 
 @media (max-width: 991px) {
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .features-grid,
-  .courses-grid,
+  .development-grid,
   .testimonials-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offers-grid {
+    grid-template-columns: 1fr;
   }
 
   .faq-layout {
@@ -123,7 +169,7 @@
   }
 
   .features-grid,
-  .courses-grid,
+  .development-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
   }

@@ -4,19 +4,11 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./pages/home/home').then((m) => m.HomeComponent),
-    title: 'Education House | Study Abroad & Test Prep Consultancy',
+    title: 'Education House | Coaching Institute for Class 1–8',
   },
   {
     path: 'about',
     loadComponent: () => import('./pages/about/about').then((m) => m.AboutComponent),
-  },
-  {
-    path: 'courses',
-    loadComponent: () => import('./pages/courses/courses').then((m) => m.CoursesComponent),
-  },
-  {
-    path: 'study-abroad',
-    loadComponent: () => import('./pages/study-abroad/study-abroad').then((m) => m.StudyAbroadComponent),
   },
   {
     path: 'gallery',

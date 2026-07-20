@@ -6,8 +6,8 @@
         <span>Education<strong>House</strong></span>
       </a>
       <p>
-        Empowering students since 2011 with world-class test preparation, career counselling, and study abroad
-        guidance to help you achieve your global ambitions.
+        A coaching institute in Lucknow helping students from Class 1 to Class 8 build strong academic
+        foundations and grow into confident, disciplined and curious young learners.
       </p>
       <ul class="footer__social">
         @for (social of socialLinks; track social.label) {
@@ -27,48 +27,29 @@
       </ul>
     </div>
 
-    <div class="footer__col">
-      <h3>Our Courses</h3>
-      <ul>
-        @for (course of courseLinks; track course) {
-          <li><a routerLink="/courses">{{ course }}</a></li>
-        }
-      </ul>
+    <div class="footer__col footer__col--wide">
+      <h3>Contact Information</h3>
+      <address>
+        <p>Education House</p>
+        <p>Near UPHC III Road, Lucknow, Uttar Pradesh 226013</p>
+        <p><a href="tel:+919450212553">+91 94502 12553</a></p>
+        <p><a href="tel:+919695689720">+91 96956 89720</a></p>
+      </address>
     </div>
 
     <div class="footer__col footer__col--wide">
-      <h3>Stay Updated</h3>
-      <p>Subscribe to get the latest scholarship alerts, intake deadlines and event updates.</p>
-
-      @if (isSubscribed()) {
-        <p class="footer__subscribed">✓ You're subscribed! Check your inbox for a confirmation email.</p>
-      } @else {
-        <form class="footer__newsletter" (ngSubmit)="subscribe()">
-          <input
-            type="email"
-            required
-            placeholder="Enter your email"
-            [ngModel]="newsletterEmail()"
-            (ngModelChange)="newsletterEmail.set($event)"
-            name="newsletterEmail"
-            aria-label="Email address for newsletter"
-          />
-          <button type="submit" class="btn btn-accent btn-sm">Subscribe</button>
-        </form>
-      }
-
-      <address>
-        <p>123 MG Road, Bengaluru, Karnataka 560001, India</p>
-        <p><a href="tel:+911234567890">+91 123 456 7890</a></p>
-        <p><a href="mailto:info@educationhouse.in">info&#64;educationhouse.in</a></p>
-      </address>
+      <h3>Our Mission</h3>
+      <p>
+        To nurture curious, confident and capable young learners by providing quality education in a caring,
+        supportive and engaging environment where every child receives personal attention.
+      </p>
     </div>
   </div>
 
   <div class="footer__bottom">
     <div class="container footer__bottom-inner">
       <p>&copy; {{ currentYear }} Education House. All rights reserved.</p>
-      <p>Designed for students who dream big.</p>
+      <p>Helping young minds learn, grow &amp; shine.</p>
     </div>
   </div>
 </footer>

@@ -1,0 +1,11 @@
+<article class="founder-card card">
+  <div class="founder-card__photo">
+    <img [src]="founder().photo" [alt]="'Portrait of ' + founder().name" loading="lazy" width="480" height="560" />
+  </div>
+  <div class="founder-card__body">
+    <h3>{{ founder().name }}</h3>
+    <span class="founder-card__role">{{ founder().role }}</span>
+    <span class="founder-card__experience">{{ founder().experience }}</span>
+    <p>{{ founder().description }}</p>
+  </div>
+</article>

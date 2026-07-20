@@ -6,59 +6,52 @@ export class FaqService {
   private readonly _faqs = signal<Faq[]>([
     {
       id: 1,
-      category: 'Admissions',
-      question: 'What documents do I need to start my study abroad application?',
+      category: 'Classes',
+      question: 'What classes do you teach?',
       answer:
-        'You typically need academic transcripts, a valid passport, English proficiency scores (IELTS/PTE), a statement of purpose, letters of recommendation and proof of funds. Our counsellors provide a personalised checklist during your first consultation.',
+        'We provide quality education exclusively for students from Class 1 to Class 8, with teaching adapted to each child’s age and learning level.',
     },
     {
       id: 2,
-      category: 'Admissions',
-      question: 'How early should I start my university application process?',
+      category: 'Classes',
+      question: 'What subjects are covered?',
       answer:
-        'We recommend starting at least 8-12 months before your intended intake to allow enough time for test preparation, university shortlisting, application submission and visa processing.',
+        'We cover all core school subjects along with dedicated English language classes focused on grammar, vocabulary, reading, writing and spoken confidence.',
     },
     {
       id: 3,
-      category: 'Courses',
-      question: 'Are IELTS and PTE classes conducted online or offline?',
+      category: 'Support',
+      question: 'Do you provide homework support?',
       answer:
-        'We offer both online and in-centre batches for all our test preparation courses, so you can choose whichever format suits your schedule and learning style.',
+        'Yes, our school tuition program includes daily homework support, doubt clearing and regular practice to reinforce what is taught in school.',
     },
     {
       id: 4,
-      category: 'Courses',
-      question: 'Do you offer a money-back guarantee if I don’t achieve my target band score?',
+      category: 'Batches',
+      question: 'How many students are there in one batch?',
       answer:
-        'Yes, our IELTS band score guarantee program includes complimentary extra classes and mock tests until you reach your target score, at no additional cost.',
+        'We intentionally keep our batches small so that every child receives genuine individual attention from our teachers.',
     },
     {
       id: 5,
-      category: 'Visa',
-      question: 'What is your visa success rate?',
+      category: 'Support',
+      question: 'How do parents receive progress updates?',
       answer:
-        'Education House maintains a visa success rate of over 95% across Canada, Australia, the UK, the USA, Germany and Ireland, thanks to thorough documentation review and mock interviews.',
+        'Our teachers share regular updates on academic performance, behaviour and areas of improvement, so parents stay closely involved in their child’s learning.',
     },
     {
       id: 6,
-      category: 'Visa',
-      question: 'Can you help with education loans and financial documentation?',
+      category: 'Classes',
+      question: 'Do you teach spoken English?',
       answer:
-        'Yes, we partner with leading banks and NBFCs to help you secure education loans, and our team assists in preparing all financial documents required for your visa application.',
+        'Yes, spoken English and communication confidence are a core part of our English Language Classes, alongside grammar, reading and writing.',
     },
     {
       id: 7,
-      category: 'Fees',
-      question: 'Is the university and visa counselling service free?',
+      category: 'Enrollment',
+      question: 'How can I enroll my child?',
       answer:
-        'Our initial profile evaluation and university shortlisting consultation is completely free. Service fees, if any, are discussed transparently before you commit to any paid service.',
-    },
-    {
-      id: 8,
-      category: 'Fees',
-      question: 'Do you offer instalment options for course fees?',
-      answer:
-        'Yes, we offer flexible instalment plans for all our test preparation and skill development courses. Speak to our front desk for the current plans available.',
+        'Simply reach out through our contact form, call us, or visit our centre in Lucknow. Our team will help you choose the right batch for your child.',
     },
   ]);
 
