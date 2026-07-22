@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./pages/home/home').then((m) => m.HomeComponent),
-    title: 'Education House | Coaching Institute for Class 1–8',
+    title: 'Education House | Coaching Institute for Class 1–10',
   },
   {
     path: 'about',

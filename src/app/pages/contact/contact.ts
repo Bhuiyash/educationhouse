@@ -42,7 +42,7 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this.seo.update(
       'Contact Us',
-      'Get in touch with Education House in Lucknow for admissions and enquiries for students from Class 1 to Class 8.',
+      'Get in touch with Education House in Lucknow for admissions and enquiries for students from Class 1 to Class 10.',
     );
   }
 }

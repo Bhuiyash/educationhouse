@@ -9,7 +9,7 @@ export class FaqService {
       category: 'Classes',
       question: 'What classes do you teach?',
       answer:
-        'We provide quality education exclusively for students from Class 1 to Class 8, with teaching adapted to each child’s age and learning level.',
+        'We provide quality education exclusively for students from Class 1 to Class 10, with teaching adapted to each child’s age and learning level.',
     },
     {
       id: 2,

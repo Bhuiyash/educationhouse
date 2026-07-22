@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.seo.update(
       'Home',
-      'Education House is a coaching institute in Lucknow providing quality education for Class 1 to Class 8, focused on academic excellence and overall child development.',
+      'Education House is a coaching institute in Lucknow providing quality education for Class 1 to Class 10, focused on academic excellence and overall child development.',
     );
   }
 }

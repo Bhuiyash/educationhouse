@@ -7,7 +7,7 @@ export class StatsService {
     { value: 25, suffix: '+', label: 'Years of Teaching Experience', icon: '📚' },
     { value: 10000, suffix: '+', label: 'Students Guided', icon: '🎓' },
     { value: 98, suffix: '%', label: 'Parent Satisfaction', icon: '💬' },
-    { value: 8, suffix: '', label: 'Classes Covered (1–8)', icon: '🏫' },
+    { value: 10, suffix: '', label: 'Classes Covered (1–10)', icon: '🏫' },
     { value: 100, suffix: '%', label: 'Personal Attention', icon: '🤝' },
   ]);
 
