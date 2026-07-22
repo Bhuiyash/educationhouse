@@ -1,6 +1,6 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ContactService } from '../../../services/contact.service';
+import { buildWhatsAppUrl } from '../../constants/whatsapp.constants';
 
 @Component({
   selector: 'app-contact-form',
@@ -10,17 +10,10 @@ import { ContactService } from '../../../services/contact.service';
 })
 export class ContactFormComponent {
   private readonly fb = inject(FormBuilder);
-  private readonly contactService = inject(ContactService);
-
-  protected readonly isSubmitting = signal(false);
-  protected readonly isSubmitted = signal(false);
 
   protected readonly form = this.fb.nonNullable.group({
-    name: ['', [Validators.required, Validators.minLength(2)]],
-    email: ['', [Validators.email]],
-    phone: ['', [Validators.required, Validators.pattern(/^[0-9+\-\s]{7,15}$/)]],
-    subject: ['', [Validators.required]],
-    message: ['', [Validators.minLength(10)]],
+    name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
+    phone: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
   });
 
   get f() {
@@ -28,21 +21,26 @@ export class ContactFormComponent {
   }
 
   onSubmit(): void {
-    if (this.form.invalid || this.isSubmitting()) {
+    if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
 
-    this.isSubmitting.set(true);
+    const { name, phone } = this.form.getRawValue();
+    const message = [
+      'Hello Education House,',
+      '',
+      'I would like to enquire about admission.',
+      '',
+      `Name: ${name}`,
+      '',
+      `Phone Number: ${phone}`,
+      '',
+      'Please contact me regarding coaching for my child.',
+      '',
+      'Thank you.',
+    ].join('\n');
 
-    this.contactService.submit(this.form.getRawValue()).subscribe(() => {
-      this.isSubmitting.set(false);
-      this.isSubmitted.set(true);
-      this.form.reset();
-    });
-  }
-
-  sendAnother(): void {
-    this.isSubmitted.set(false);
+    window.open(buildWhatsAppUrl(message), '_blank');
   }
 }

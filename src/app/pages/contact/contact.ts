@@ -4,6 +4,7 @@ import { ContactFormComponent } from '../../shared/components/contact-form/conta
 import { ButtonComponent } from '../../shared/components/button/button';
 import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scroll.directive';
 import { SeoService } from '../../services/seo.service';
+import { buildWhatsAppUrl } from '../../shared/constants/whatsapp.constants';
 
 interface ContactDetail {
   icon: string;
@@ -22,7 +23,6 @@ export class ContactComponent implements OnInit {
   private readonly sanitizer = inject(DomSanitizer);
 
   private readonly primaryPhone = '9450212553';
-  private readonly whatsappPhone = '9695689720';
 
   readonly contactDetails: ContactDetail[] = [
     { icon: '📍', title: 'Visit Us', lines: ['Near UPHC III Road', 'Lucknow, Uttar Pradesh 226013'] },
@@ -31,9 +31,7 @@ export class ContactComponent implements OnInit {
   ];
 
   readonly callHref = `tel:+91${this.primaryPhone}`;
-  readonly whatsappHref = `https://wa.me/91${this.whatsappPhone}?text=${encodeURIComponent(
-    'Hi, I would like to know more about admissions at Education House.',
-  )}`;
+  readonly whatsappHref = buildWhatsAppUrl('Hi, I would like to know more about admissions at Education House.');
   readonly googleMapsHref = 'https://www.google.com/maps?cid=10383142876289878479';
   readonly mapEmbedSrc: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
     'https://www.google.com/maps?q=Near+UPHC+III+Road,+Lucknow,+Uttar+Pradesh+226013&output=embed',

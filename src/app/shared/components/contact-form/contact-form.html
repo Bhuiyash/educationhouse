@@ -1,69 +1,33 @@
-@if (isSubmitted()) {
-  <div class="form-success" role="status">
-    <span class="form-success__icon" aria-hidden="true">✓</span>
-    <h3>Message Sent Successfully!</h3>
-    <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
-    <button type="button" class="btn btn-outline-primary" (click)="sendAnother()">Send Another Message</button>
-  </div>
-} @else {
-  <form class="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
-    <div class="contact-form__row">
-      <div class="form-field">
-        <label for="name">Full Name</label>
-        <input id="name" type="text" formControlName="name" placeholder="Your full name" [class.is-invalid]="f.name.invalid && f.name.touched" />
-        @if (f.name.invalid && f.name.touched) {
-          <span class="form-field__error">Please enter your full name (min. 2 characters).</span>
-        }
-      </div>
-
-      <div class="form-field">
-        <label for="email">Email Address</label>
-        <input id="email" type="email" formControlName="email" placeholder="you@example.com" [class.is-invalid]="f.email.invalid && f.email.touched" />
-        @if (f.email.invalid && f.email.touched) {
-          <span class="form-field__error">Please enter a valid email address.</span>
-        }
-      </div>
-    </div>
-
-    <div class="contact-form__row">
-      <div class="form-field">
-        <label for="phone">Phone Number</label>
-        <input id="phone" type="tel" formControlName="phone" placeholder="+91 98765 43210" [class.is-invalid]="f.phone.invalid && f.phone.touched" />
-        @if (f.phone.invalid && f.phone.touched) {
-          <span class="form-field__error">Please enter a valid phone number.</span>
-        }
-      </div>
-
-      <div class="form-field">
-        <label for="subject">Subject</label>
-        <select id="subject" formControlName="subject" [class.is-invalid]="f.subject.invalid && f.subject.touched">
-          <option value="" disabled>Select a topic</option>
-          <option value="Admissions Enquiry">Admissions Enquiry</option>
-          <option value="English Language Classes">English Language Classes</option>
-          <option value="School Tuition">School Tuition</option>
-          <option value="Fees & Batch Timings">Fees &amp; Batch Timings</option>
-          <option value="General Enquiry">General Enquiry</option>
-        </select>
-        @if (f.subject.invalid && f.subject.touched) {
-          <span class="form-field__error">Please select a subject.</span>
-        }
-      </div>
+<form class="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+  <div class="contact-form__row">
+    <div class="form-field">
+      <label for="name">Parent/Student Name</label>
+      <input id="name" type="text" formControlName="name" placeholder="Your full name" maxlength="50" [class.is-invalid]="f.name.invalid && f.name.touched" />
+      @if (f.name.invalid && f.name.touched) {
+        <span class="form-field__error">
+          @if (f.name.errors?.['minlength']) {
+            Name must be at least 2 characters.
+          } @else {
+            Please enter your name.
+          }
+        </span>
+      }
     </div>
 
     <div class="form-field">
-      <label for="message">Message</label>
-      <textarea id="message" formControlName="message" rows="5" placeholder="Tell us how we can help you..." [class.is-invalid]="f.message.invalid && f.message.touched"></textarea>
-      @if (f.message.invalid && f.message.touched) {
-        <span class="form-field__error">Message must be at least 10 characters long.</span>
+      <label for="phone">Phone Number</label>
+      <input id="phone" type="tel" formControlName="phone" placeholder="9876543210" inputmode="numeric" maxlength="10" [class.is-invalid]="f.phone.invalid && f.phone.touched" />
+      @if (f.phone.invalid && f.phone.touched) {
+        <span class="form-field__error">Please enter a valid 10-digit phone number.</span>
       }
     </div>
+  </div>
 
-    <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid || isSubmitting()">
-      @if (isSubmitting()) {
-        <span class="spinner" aria-hidden="true"></span> Sending...
-      } @else {
-        Send Message
-      }
-    </button>
-  </form>
-}
+  <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+      <path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.464 3.484 1.345 4.997L2 22l5.121-1.341a9.958 9.958 0 0 0 4.883 1.245h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.671-1.04-5.182-2.929-7.071a9.937 9.937 0 0 0-7.071-2.83zm0 18.184h-.003a8.16 8.16 0 0 1-4.156-1.14l-.298-.177-3.04.797.812-2.965-.194-.304a8.158 8.158 0 0 1-1.253-4.398c0-4.512 3.671-8.184 8.187-8.184a8.13 8.13 0 0 1 5.788 2.398 8.13 8.13 0 0 1 2.397 5.79c0 4.512-3.672 8.183-8.24 8.183z" />
+    </svg>
+    Send Enquiry on WhatsApp
+  </button>
+</form>
