@@ -13,7 +13,6 @@ export class FooterComponent {
   readonly quickLinks = [
     { label: 'Home', path: '/' },
     { label: 'About Us', path: '/about' },
-    { label: 'Gallery', path: '/gallery' },
     { label: 'Testimonials', path: '/testimonials' },
     { label: 'FAQ', path: '/faq' },
     { label: 'Contact Us', path: '/contact' },

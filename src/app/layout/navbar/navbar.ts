@@ -22,7 +22,6 @@ export class NavbarComponent {
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
     { label: 'Why Choose Us', path: '/', fragment: 'why-us' },
-    { label: 'Gallery', path: '/gallery' },
     { label: 'Testimonials', path: '/testimonials' },
     { label: 'FAQ', path: '/faq' },
     { label: 'Contact', path: '/contact' },
