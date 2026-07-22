@@ -145,6 +145,12 @@ input, textarea, select {
   gap: var(--space-6);
 }
 
+/* Grid items otherwise default to a content-based automatic minimum size,
+   which can force a track (and the grid) wider than its container. */
+.grid > * {
+  min-width: 0;
+}
+
 .text-center {
   text-align: center;
 }

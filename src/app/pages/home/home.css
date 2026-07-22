@@ -129,7 +129,7 @@
 /* FAQ layout */
 .faq-layout {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: var(--space-8);
   align-items: start;
 }
@@ -154,7 +154,7 @@
   }
 
   .faq-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

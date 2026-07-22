@@ -136,9 +136,28 @@
     display: flex;
   }
 
-  .navbar__nav {
+  /*
+   * The off-canvas panel needs its own fixed, viewport-matched, overflow:hidden
+   * clipper. Without it, translating .navbar__nav off-screen still leaves its
+   * post-transform box counted in the document's scrollable width (a transformed
+   * box contributes to ancestor scroll size even though position:fixed elements
+   * normally wouldn't), which is what caused horizontal overflow on mobile.
+   */
+  .navbar__nav-clip {
     position: fixed;
-    inset: var(--header-height) 0 0 0;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    height: calc(100vh - var(--header-height));
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  .navbar__nav {
+    pointer-events: auto;
+    width: 100%;
+    height: 100%;
     background: #fff;
     flex-direction: column;
     align-items: flex-start;
