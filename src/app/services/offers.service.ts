@@ -13,7 +13,7 @@ export class OffersService {
     {
       icon: '📖',
       title: 'School Tuition',
-      tagline: 'For students from Class 1 to Class 8',
+      tagline: 'For students from Class 1 to Class 10',
       items: ['Homework Support', 'Daily Practice', 'Individual Attention', 'Strong Concept Building', 'Exam Preparation', 'Revision Sessions', 'Doubt Clearing', 'Regular Assessments'],
     },
   ]);

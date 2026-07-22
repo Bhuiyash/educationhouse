@@ -38,7 +38,7 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
     this.seo.update(
       'About Us',
-      'Learn about Education House in Lucknow — our mission, founders and values, and our commitment to the overall development of students from Class 1 to Class 8.',
+      'Learn about Education House in Lucknow — our mission, founders and values, and our commitment to the overall development of students from Class 1 to Class 10.',
     );
   }
 }
