@@ -17,10 +17,10 @@ export class ContactFormComponent {
 
   protected readonly form = this.fb.nonNullable.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
-    email: ['', [Validators.required, Validators.email]],
+    email: ['', [Validators.email]],
     phone: ['', [Validators.required, Validators.pattern(/^[0-9+\-\s]{7,15}$/)]],
     subject: ['', [Validators.required]],
-    message: ['', [Validators.required, Validators.minLength(10)]],
+    message: ['', [Validators.minLength(10)]],
   });
 
   get f() {
