@@ -1,14 +1,31 @@
+/*
+ * The <app-navbar> host is an extra box between <app-root>'s flex layout and
+ * .navbar. Removing it from the box tree (display:contents) is required for
+ * .navbar's position:sticky to track scroll correctly here — with the host box
+ * present, .navbar's sticky offset silently fails to update after the browser
+ * settles post-scroll (verified: it isn't caused by z-index, backdrop-filter,
+ * transitions, or any scroll listener — only removing this wrapper box fixes it).
+ */
+:host {
+  display: contents;
+}
+
 .navbar {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.66);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid transparent;
-  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+  transition: background-color 280ms ease, backdrop-filter 280ms ease, box-shadow 280ms ease,
+    border-color 280ms ease;
 }
 
 .navbar.is-scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   box-shadow: var(--shadow-sm);
   border-bottom-color: var(--color-border);
 }
