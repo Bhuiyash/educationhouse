@@ -17,6 +17,7 @@ interface NavLink {
 export class NavbarComponent {
   protected readonly isMenuOpen = signal(false);
   protected readonly isScrolled = signal(false);
+  private scrollTicking = false;
 
   readonly navLinks: NavLink[] = [
     { label: 'Home', path: '/' },
@@ -29,7 +30,12 @@ export class NavbarComponent {
 
   @HostListener('window:scroll')
   onWindowScroll(): void {
-    this.isScrolled.set(window.scrollY > 12);
+    if (this.scrollTicking) return;
+    this.scrollTicking = true;
+    requestAnimationFrame(() => {
+      this.isScrolled.set(window.scrollY > 12);
+      this.scrollTicking = false;
+    });
   }
 
   toggleMenu(): void {

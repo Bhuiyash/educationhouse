@@ -5,28 +5,30 @@
       <span class="navbar__logo-text">Education<strong>House</strong></span>
     </a>
 
-    <nav class="navbar__nav" [class.is-open]="isMenuOpen()" aria-label="Primary navigation">
-      <ul>
-        @for (link of navLinks; track link.label) {
-          <li>
-            @if (link.fragment) {
-              <a [routerLink]="link.path" [fragment]="link.fragment" (click)="closeMenu()">{{ link.label }}</a>
-            } @else {
-              <a
-                [routerLink]="link.path"
-                routerLinkActive="is-active"
-                [routerLinkActiveOptions]="{ exact: link.path === '/' }"
-                (click)="closeMenu()"
-              >{{ link.label }}</a>
-            }
-          </li>
-        }
-      </ul>
+    <div class="navbar__nav-clip">
+      <nav class="navbar__nav" [class.is-open]="isMenuOpen()" aria-label="Primary navigation">
+        <ul>
+          @for (link of navLinks; track link.label) {
+            <li>
+              @if (link.fragment) {
+                <a [routerLink]="link.path" [fragment]="link.fragment" (click)="closeMenu()">{{ link.label }}</a>
+              } @else {
+                <a
+                  [routerLink]="link.path"
+                  routerLinkActive="is-active"
+                  [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+                  (click)="closeMenu()"
+                >{{ link.label }}</a>
+              }
+            </li>
+          }
+        </ul>
 
-      <div class="navbar__nav-cta">
-        <app-button routerLink="/contact" size="sm" (click)="closeMenu()">Enroll Your Child</app-button>
-      </div>
-    </nav>
+        <div class="navbar__nav-cta">
+          <app-button routerLink="/contact" size="sm" (click)="closeMenu()">Enroll Your Child</app-button>
+        </div>
+      </nav>
+    </div>
 
     <button
       type="button"
